@@ -13,7 +13,7 @@ class StoreUser extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -40,4 +40,6 @@ class StoreUser extends FormRequest
             'password' => 'Şifre',
         ];
     }
+
+
 }
