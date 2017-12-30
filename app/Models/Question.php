@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
@@ -19,6 +20,11 @@ class Question extends Model
     public function description()
     {
         return $this->belongsTo(Answer::class,'description_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function answer()

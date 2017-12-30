@@ -14,14 +14,13 @@ class CreateAnswersTable extends Migration
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('question_id');
             $table->text('answer');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
-        });
-        Schema::table('answers', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });

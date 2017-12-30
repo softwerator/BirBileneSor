@@ -14,10 +14,12 @@ class CreateVotesTable extends Migration
     public function up()
     {
         Schema::create('votes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->unsignedInteger('user_id');
             $table->enum('post_type', ['answer', 'comment']);
             $table->unsignedInteger('post_id');
             $table->tinyInteger('vote');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

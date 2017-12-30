@@ -18,9 +18,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function paginate()
     {
-        $questions = Question::paginate(20);
+        $questions = Question::with(['user', 'description'])->orderBy('created_at','DESC')->paginate(20);
 
         return response()->json(['status' => true, 'data' => $questions]);
     }
@@ -48,36 +48,54 @@ class QuestionController extends Controller
         try {
             $user = User::getByToken($request->token);
 
-            $question        = new Question();
-            $question->title = $request->title;
-            $question->save();
+            $question          = new Question();
+            $question->title   = $request->title;
+            $question->user_id = $user->id;
+            $question_saved    = $question->save();
+
+            if (!$question_saved)
+                throw new \Exception("Soru kaydedilemedi");
 
             $answer              = new Answer();
             $answer->user_id     = $user->id;
             $answer->question_id = $question->id;
-            $answer->answer      = $request->answer;
-            $answer->save();
+            $answer->answer      = $request->description;
+            $answer_saved        = $answer->save();
+
+            if (!$answer_saved)
+                throw new \Exception("Cevep kaydedilemedi");
 
             $question->description_id = $answer->id;
+            $question_saved           = $question->save();
 
-            $tags = str_split(',', $request->tags);
+            if (!$question_saved)
+                throw new \Exception("Soru kaydedilemedi");
+
+            /*$tags = explode(',', $request->tags);
             foreach ($tags as $tag) {
-                $tag_instance = Tag::where('tag', $tag)->first();
 
+                $tag_instance = Tag::where('tag', $tag)->first();
                 if ($tag_instance == null) {
                     $tag_instance      = new Tag();
-                    $tag_instance->tag = $tag;
+                    $tag_instance->tag = (int) $tag;
+                    $tag_saved = $tag_instance->save();
+
+                    if (!$tag_saved)
+                        throw new \Exception("Etiket kaydedilemedi");
                 }
 
                 $question_tag              = new Question_Tag();
                 $question_tag->question_id = $question->id;
-                $question_tag->tag_id      = $question->tag;
+                $question_tag->tag_id      = $tag_instance->id;
                 $question_tag->save();
-            }
 
-            return response()->json(['status' => true]);
+                if (!$question_tag)
+                    throw new \Exception("Etiket pivotu kaydedilemedi");
+            }*/
 
             DB::commit();
+
+            return response()->json(['status' => true, 'question_id' => $question->id]);
 
         } catch (\Exception $e) {
 
@@ -96,7 +114,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = Question::find($id);
+        $question = Question::with(['user', 'description', 'answer'])->find($id)->toArray();
 
         return response()->json(compact('question'));
     }
@@ -133,5 +151,18 @@ class QuestionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function answers($id)
+    {
+        $answers = Question::with(['description', 'answer'])->find($id)->answers->toArray();
+
+        return response()->json(compact('answers'));
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Answer;
 use App\Models\Question;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnswerController extends Controller
 {
@@ -48,9 +49,16 @@ class AnswerController extends Controller
 
             $answer              = new Answer();
             $answer->user_id     = $user->id;
-            $answer->question_id = $user->question_id;
+            $answer->question_id = $request->question_id;
             $answer->answer      = $request->answer;
-            $answer->save();
+            $answer_saved = $answer->save();
+
+            if(! $answer_saved)
+                throw new \Exception("Yorum kaydedilemedi");
+
+            DB::commit();
+
+            return response()->json(['status' => true]);
 
         } catch (\Exception $e) {
 

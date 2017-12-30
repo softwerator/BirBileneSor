@@ -14,10 +14,11 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('title');
-            $table->unsignedInteger('description_id');
+            $table->unsignedInteger('description_id')->nullable();
             $table->unsignedInteger('answer_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();

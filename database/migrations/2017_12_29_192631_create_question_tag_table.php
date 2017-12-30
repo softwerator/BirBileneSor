@@ -14,8 +14,10 @@ class CreateQuestionTagTable extends Migration
     public function up()
     {
         Schema::create('question_tag', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->unsignedInteger('question_id');
             $table->unsignedInteger('tag_id');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
 

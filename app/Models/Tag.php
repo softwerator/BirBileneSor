@@ -16,6 +16,9 @@ class Tag extends Model
         'tag'
     ];
 
+    protected $dates = null;
+
+
     public function questions()
     {
         return $this->belongsToMany(Question::class, 'question_tag', 'question_id');

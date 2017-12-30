@@ -14,6 +14,7 @@ class CreateQuestionsForeignKeys extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->foreign('description_id')->references('id')->on('answers')->onDelete('cascade');
             $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
         });
