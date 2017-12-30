@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuestion;
+use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Question_Tag;
+use App\Models\Tag;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
@@ -16,9 +20,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = QuestionController::paginate(20);
+        $questions = Question::paginate(20);
 
-        var_dump($questions);
+        return response()->json(['status' => true, 'data' => $questions]);
     }
 
     /**
@@ -39,15 +43,49 @@ class QuestionController extends Controller
      */
     public function store(StoreQuestion $request)
     {
-        $user = User::getByToken($request->token);
+        DB::beginTransaction();
 
-        $question = new Question();
-        $question->title = $request->title;
-        $question->save();
+        try {
+            $user = User::getByToken($request->token);
 
-        $answer = new Answer();
+            $question        = new Question();
+            $question->title = $request->title;
+            $question->save();
 
+            $answer              = new Answer();
+            $answer->user_id     = $user->id;
+            $answer->question_id = $question->id;
+            $answer->answer      = $request->answer;
+            $answer->save();
 
+            $question->description_id = $answer->id;
+
+            $tags = str_split(',', $request->tags);
+            foreach ($tags as $tag) {
+                $tag_instance = Tag::where('tag', $tag)->first();
+
+                if ($tag_instance == null) {
+                    $tag_instance      = new Tag();
+                    $tag_instance->tag = $tag;
+                }
+
+                $question_tag              = new Question_Tag();
+                $question_tag->question_id = $question->id;
+                $question_tag->tag_id      = $question->tag;
+                $question_tag->save();
+            }
+
+            return response()->json(['status' => true]);
+
+            DB::commit();
+
+        } catch (\Exception $e) {
+
+            DB::rollBack();
+
+            return response()->json(['status' => false, 'message' => $e->getMessage()]);
+
+        }
     }
 
     /**
