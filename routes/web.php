@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return get_new_token();
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+

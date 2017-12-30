@@ -13,6 +13,26 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->group(function () {
+
+});
+
+Auth::routes();
+
+Route::post('logout','Auth\LoginController@logout');
+
+Route::prefix('user')->group(function () {
+
+    Route::post('store', 'UserController@store');
+
+    Route::get('show/{id}', 'UserController@show')->where(['id'=>'[0-9]+']);
+
+});
+
+Route::prefix('question')->group(function () {
+
+    Route::post('store', 'QuestionController@store')->middleware('auth');
+
+    Route::get('show/{id}', 'QuestionController@show')->where(['id'=>'[0-9]+']);
+
 });
