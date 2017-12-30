@@ -21,6 +21,9 @@
             "database/seeds",
             "database/factories"
         ],
+        "files": [
+            "app/Helpers/token_helper.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         }
