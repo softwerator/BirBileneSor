@@ -24,9 +24,10 @@ class StoreQuestion extends FormRequest
     public function rules()
     {
         return [
-            'token'       => 'required|string',
+            'token'       => 'required|string|exists:users,login_token',
             'title'       => 'required|string',
             'description' => 'required|string',
+            'tags'        => 'required|string',
         ];
     }
 
@@ -35,6 +36,7 @@ class StoreQuestion extends FormRequest
         return [
             'title'       => 'Başlık',
             'description' => 'Detay',
+            'tags'        => 'Etiketler',
         ];
     }
 
