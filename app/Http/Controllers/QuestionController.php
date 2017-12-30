@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreQuestion;
 use App\Models\Question;
+use App\User;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -35,9 +37,17 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreQuestion $request)
     {
-        //
+        $user = User::getByToken($request->token);
+
+        $question = new Question();
+        $question->title = $request->title;
+        $question->save();
+
+        $answer = new Answer();
+
+
     }
 
     /**

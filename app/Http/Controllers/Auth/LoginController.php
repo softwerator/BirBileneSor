@@ -83,8 +83,7 @@ class LoginController extends Controller
             return response()->json(["status" => false, "message" => "Token ile eşleşen kullanıcı sistemde kayıtlı değil."]);
         }
 
-        $user = User::where('login_token', $request->token)->first();
-
+        $user = User::getByToken($request->token);
 
         $user->login_token = null;
 
