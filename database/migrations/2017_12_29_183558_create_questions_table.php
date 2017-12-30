@@ -21,8 +21,9 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('answer_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
-
-            $table->foreign('user_id')->references('id')->on('users');
+        });
+        Schema::table('questions', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

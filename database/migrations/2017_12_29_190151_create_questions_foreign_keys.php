@@ -14,8 +14,8 @@ class CreateQuestionsForeignKeys extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->foreign('description_id')->references('id')->on('answers');
-            $table->foreign('answer_id')->references('id')->on('answers');
+            $table->foreign('description_id')->references('id')->on('answers')->onDelete('cascade');
+            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
         });
     }
 

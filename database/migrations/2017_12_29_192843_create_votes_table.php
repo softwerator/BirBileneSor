@@ -15,6 +15,7 @@ class CreateVotesTable extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
+            $table->enum('post_type', ['answer', 'comment']);
             $table->unsignedInteger('post_id');
             $table->tinyInteger('vote');
         });
