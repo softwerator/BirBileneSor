@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function getByToken($token)
+    {
+        return (new static)->where('login_token', $token)->first();
+    }
 }
