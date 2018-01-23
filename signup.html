@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kayıt Ol | Bir Bilene Sor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=abaeac34fef4">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #birBileneSor {
+            font-size: 14px;
+            color: #f48024;
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+        <header class="top-bar js-top-bar _fixed">
+                <div class="-container">
+                    <div class="-main">
+                        <div id="birBileneSor">
+                                <a href="questions.html"><b>BİR BİLENE SOR</b></a>
+                        </div>
+        
+        
+                        <nav class="navigation" role="navigation" aria-label="site navigation">
+                            <ol class="-list">
+                                <li class="-item _current">
+                                    <a id="nav-questions" href="questions.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:1})">Sorular</a>
+                                </li>
+                                <li class="-item">
+                                    <a id="nav-tags" href="tags.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:2})">Etiketler</a>
+                                </li>
+                                <li class="-item">
+                                    <a id="nav-users" href="users.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:3})">Kullanıcılar</a>
+                                </li>
+                            </ol>
+                        </nav>
+        
+                    </div>
+        
+                    <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Arama" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field"
+                        />
+                        <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit">
+                            <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z" />
+                            </svg>
+                        </button>
+                    </form>
+        
+        
+        
+        
+        
+        
+                    <div class="-actions">
+                        <nav class="secondary-nav">
+                            <div class="-dialog-container js-topbar-dialog-corral">
+        
+        
+                                <div class="topbar-dialog siteSwitcher-dialog dno">
+                                    <div class="header">
+                                        <h3>
+                                            <a href="https://stackoverflow.com">current community</a>
+                                        </h3>
+                                    </div>
+                                    <div class="modal-content current-site-container">
+                                        <ul class="current-site">
+                                            <li>
+                                                <div class="related-links">
+                                                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                                                    <a href="https://chat.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                                                </div>
+                                                <a href="https://stackoverflow.com" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+                                                    <div class="favicon favicon-stackoverflow site-icon" title="Stack Overflow"></div>
+                                                    Stack Overflow
+                                                </a>
+        
+                                            </li>
+                                            <li class="related-site">
+                                                <div class="L-shaped-icon-container">
+                                                    <span class="L-shaped-icon"></span>
+                                                </div>
+        
+                                                <a href="https://meta.stackoverflow.com" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+                                                    <div class="favicon favicon-stackoverflowmeta site-icon" title="Meta Stack Overflow"></div>
+                                                    Meta Stack Overflow
+                                                </a>
+        
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                    <div class="header" id="your-communities-header">
+                                        <h3>
+                                            your communities </h3>
+        
+                                    </div>
+                                    <div class="modal-content" id="your-communities-section">
+        
+                                        <div class="call-to-login">
+                                            <a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect"
+                                                class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or
+                                            <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f" class="login-link js-gps-track"
+                                                data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                                        </div>
+                                    </div>
+        
+                                    <div class="header">
+                                        <h3>
+                                            <a href="https://stackexchange.com/sites">more stack exchange communities</a>
+                                        </h3>
+                                        <a href="https://stackoverflow.blog" class="fr">company blog</a>
+                                    </div>
+                                    <div class="modal-content">
+                                        <div class="child-content"></div>
+                                    </div>
+                                </div>
+                                <div class="topbar-dialog help-dialog js-help-dialog dno">
+                                    <div class="modal-content">
+                                        <ul>
+                                            <li>
+                                                <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                                                    Tour
+                                                    <span class="item-summary">
+                                                        Start here for a quick overview of the site
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                                                    Help Center
+                                                    <span class="item-summary">
+                                                        Detailed cevaplar to any questions you might have
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                                    Meta
+                                                    <span class="item-summary">
+                                                        Discuss the workings and policies of this site
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                                    About Us
+                                                    <span class="item-summary">
+                                                        Learn more about Stack Overflow the company
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                                    Business
+                                                    <span class="item-summary">
+                                                        Learn more about hiring developers or posting ads with us
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="-list">
+                                <li class="-item">
+                                    <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+                                        <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18">
+                                            <path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"
+                                            />
+                                        </svg>
+                                        <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+                                    </a>
+                                </li>
+        
+                                <li class="-item">
+                                    <a href="aboutus.html" class="-link js-help-button" title="Help Center and other resources">
+                                        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18">
+                                            <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+        
+                            </ol>
+                        </nav>
+                        <a href="login.html" id="girisYap" class="login-link btn-clear" rel="nofollow">Giriş Yap</a>
+                        <a href="signup.html" id="kayitOl" class="login-link btn-primary" rel="nofollow">Kayıt Ol</a>
+                    </div>
+                </div>
+            </header>
+    <div class="container">
+
+        <div id="content" class="snippet-hidden">
+
+            <div class="subheader">
+                <div id="tabs" style="float: left;">
+                    <a href="signup.html" class="youarehere">Kayıt Ol</a>
+                    <a href="login.html">Giriş Yap</a>
+                </div>
+            </div>
+
+            <div class="span3 well">
+                <form id="form1">
+                        <label for="exampleInputName1">Ad ve Soyad</label>
+                    <div class="form-group">
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <input type="name" name="name" class="form-control" id="exampleInputName1" placeholder="Adınızı girin" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="surname" name="surname" class="form-control" id="exampleInputSurname1" placeholder="Soyadınızı girin" required>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="exampleInputEmail1">Email adresi ve</label>
+                            <label for="exampleInputPassword1">şifre</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Emailinizi girin" required>
+                                    <small id="emailHelp" class="form-text text-muted">Emailinizi bir başkasıyla asla paylaşmayacağız</small>
+                            </div>
+                            <div class="col-md-6">
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Şifrenizi girin" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Onaylayınız</label>
+                    </div>
+                    <br/>
+                    <button id="register" type="submit" class="btn btn-primary">Kayıt Ol</button>
+                </form>
+            </div>
+            <div class="page-description" style="display:none">
+                <div class="val-message val-success">
+                    <span class="vote-accepted-on" title="success"> </span>
+                    <p></p>
+                    <p>Registration email sent to cumhuremik@hotmail.com. Open this email to finish signup.</p>
+                    <p>If you don't see this email in your inbox within 15 minutes, look for it in your junk mail folder. If
+                        you find it there, please mark the email as "Not Junk".</p>
+                    <p></p>
+                </div>
+            </div>
+            <script src="app.js"></script>
+            <script>
+                $('document').ready(function () {
+                    
+                    $("#register").click(function (e) {
+                        e.preventDefault();
+                        console.log("hey");
+
+                            var currentdata = $("#form1").serialize();
+                            console.log(currentdata);
+                            $.ajax({
+                                type: 'GET',
+                                url: api_address()+'/api/user/store',
+                                data: currentdata,
+                                dataType: "json",
+                                success: function (data) {
+                                    console.log(data);
+                                    if (data.result == true) {
+                                        alert("Başarılı kayıt!");
+                                    }
+                                    else {
+                                        alert("Hata!");
+                                    }
+                                },
+                                error: function(a){
+                                    console.log(a);
+                                    console.log("error");
+                                },
+                                complete:function(a){
+                                    console.log(a);
+                                    console.log("abc");
+                                }
+                            });
+
+                    });
+                });
+            </script>
+        </div>
+    </div><div style="background-color: #f48024">
+            <footer class="container-fluid text-center" style="background-color:#f48024">
+          <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </a>
+          <p style="color: white">Manisa Celal Bayar Üniversitesi Yazılım Mühendisliği öğrencileri tarafından yapılmıştır.</p>
+        </footer>
+    </div><script>
+            $(document).ready(function(){
+              // Add smooth scrolling to all links in navbar + footer link
+              $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                  // Prevent default anchor click behavior
+                  event.preventDefault();
+            
+                  // Store hash
+                  var hash = this.hash;
+            
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                  $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                  }, 900, function(){
+               
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                  });
+                } // End if
+              });
+              
+              $(window).scroll(function() {
+                $(".slideanim").each(function(){
+                  var pos = $(this).offset().top;
+            
+                  var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                      $(this).addClass("slide");
+                    }
+                });
+              });
+            })
+            </script>
+
+</body>
+
+</html>

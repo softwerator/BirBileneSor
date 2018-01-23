@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Etiketler | Bir Bilene Sor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=abaeac34fef4">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #birBileneSor {
+            font-size: 14px;
+            color: #f48024;
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+        <header class="top-bar js-top-bar _fixed">
+                <div class="-container">
+                    <div class="-main">
+                        <div id="birBileneSor">
+                                <a href="questions.html"><b>BİR BİLENE SOR</b></a>
+                        </div>
+        
+        
+                        <nav class="navigation" role="navigation" aria-label="site navigation">
+                            <ol class="-list">
+                                <li class="-item">
+                                    <a id="nav-questions" href="questions.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:1})">Sorular</a>
+                                </li>
+                                <li class="-item _current">
+                                    <a id="nav-tags" href="tags.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:2})">Etiketler</a>
+                                </li>
+                                <li class="-item">
+                                    <a id="nav-users" href="users.html" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:1, destination:3})">Kullanıcılar</a>
+                                </li>
+                            </ol>
+                        </nav>
+        
+                    </div>
+        
+                    <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                        <input name="q" type="text" placeholder="Arama" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field"
+                        />
+                        <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit">
+                            <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z" />
+                            </svg>
+                        </button>
+                    </form>
+        
+        
+        
+        
+        
+        
+                    <div class="-actions">
+                        <nav class="secondary-nav">
+                            <div class="-dialog-container js-topbar-dialog-corral">
+        
+        
+                                <div class="topbar-dialog siteSwitcher-dialog dno">
+                                    <div class="header">
+                                        <h3>
+                                            <a href="https://stackoverflow.com">current community</a>
+                                        </h3>
+                                    </div>
+                                    <div class="modal-content current-site-container">
+                                        <ul class="current-site">
+                                            <li>
+                                                <div class="related-links">
+                                                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                                                    <a href="https://chat.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                                                </div>
+                                                <a href="https://stackoverflow.com" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+                                                    <div class="favicon favicon-stackoverflow site-icon" title="Stack Overflow"></div>
+                                                    Stack Overflow
+                                                </a>
+        
+                                            </li>
+                                            <li class="related-site">
+                                                <div class="L-shaped-icon-container">
+                                                    <span class="L-shaped-icon"></span>
+                                                </div>
+        
+                                                <a href="https://meta.stackoverflow.com" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+                                                    <div class="favicon favicon-stackoverflowmeta site-icon" title="Meta Stack Overflow"></div>
+                                                    Meta Stack Overflow
+                                                </a>
+        
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                    <div class="header" id="your-communities-header">
+                                        <h3>
+                                            your communities </h3>
+        
+                                    </div>
+                                    <div class="modal-content" id="your-communities-section">
+        
+                                        <div class="call-to-login">
+                                            <a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect"
+                                                class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or
+                                            <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f" class="login-link js-gps-track"
+                                                data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                                        </div>
+                                    </div>
+        
+                                    <div class="header">
+                                        <h3>
+                                            <a href="https://stackexchange.com/sites">more stack exchange communities</a>
+                                        </h3>
+                                        <a href="https://stackoverflow.blog" class="fr">company blog</a>
+                                    </div>
+                                    <div class="modal-content">
+                                        <div class="child-content"></div>
+                                    </div>
+                                </div>
+                                <div class="topbar-dialog help-dialog js-help-dialog dno">
+                                    <div class="modal-content">
+                                        <ul>
+                                            <li>
+                                                <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                                                    Tour
+                                                    <span class="item-summary">
+                                                        Start here for a quick overview of the site
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                                                    Help Center
+                                                    <span class="item-summary">
+                                                        Detailed cevaplar to any questions you might have
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                                    Meta
+                                                    <span class="item-summary">
+                                                        Discuss the workings and policies of this site
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                                    About Us
+                                                    <span class="item-summary">
+                                                        Learn more about Stack Overflow the company
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                                    Business
+                                                    <span class="item-summary">
+                                                        Learn more about hiring developers or posting ads with us
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="-list">
+                                <li class="-item">
+                                    <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+                                        <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18">
+                                            <path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"
+                                            />
+                                        </svg>
+                                        <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+                                    </a>
+                                </li>
+        
+                                <li class="-item">
+                                    <a href="aboutus.html" class="-link js-help-button" title="Help Center and other resources">
+                                        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18">
+                                            <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+        
+                            </ol>
+                        </nav>
+                        <div class="-ctas">
+                            <a href="login.html" id="girisYap" class="login-link btn-clear" rel="nofollow">Giriş Yap</a>
+                            <a href="signup.html" id="kayitOl" class="login-link btn-topbar-primary" rel="nofollow">Kayıt Ol</a>
+        
+                        </div>
+                    </div>
+                </div>
+            </header>
+    <div class="container">
+
+
+
+
+
+
+
+
+        <div id="mainbar-full">
+            <h1 id="h-tags">Etiketler</h1>
+
+            <div class="page-description">
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Etiket Adına Göre Bul:</td>
+                            <td style="padding-left:5px">
+                                <input id="tagfilter" name="tagfilter" type="text" maxlength="35">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="tags_list">
+                <table id="tags-browser">
+
+                    <tbody>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/javascript" class="post-tag" title="show questions tagged 'javascript'" rel="tag">javascript</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">1535049</span>
+                                </span>
+                                <div class="excerpt">JavaScript (not to be confused with Java) is a high-level, dynamic, multi-paradigm, weakly-typed
+                                    language used for both client-side and server-side scripting. Use this tag for questions
+                                    regarding ECMA…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/javascript?sort=newest&amp;days=1" title="699 questions tagged javascript in the last 24 hours">699 kez bugün</a>,
+                                        <a href="/questions/tagged/javascript?sort=newest&amp;days=7" title="3960 questions tagged javascript in the last 7 days">3960 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">1358541</span>
+                                </span>
+                                <div class="excerpt">Java (not to be confused with JavaScript or JScript) is a general-purpose object-oriented
+                                    programming language designed to be used in conjunction with the Java Virtual Machine
+                                    (JVM). "Java platform" i…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/java?sort=newest&amp;days=1" title="506 questions tagged java in the last 24 hours">506 kez bugün</a>,
+                                        <a href="/questions/tagged/java?sort=newest&amp;days=7" title="2879 questions tagged java in the last 7 days">2879 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/c%23" class="post-tag" title="show questions tagged 'c#'" rel="tag">c#</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">1168655</span>
+                                </span>
+                                <div class="excerpt">an object-oriented programming language that is designed for building a variety of applications
+                                    that run on the .NET Framework. C# is simple, powerful, type-safe, and obje…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/c%23?sort=newest&amp;days=1" title="356 questions tagged c# in the last 24 hours">356 kez bugün</a>,
+                                        <a href="/questions/tagged/c%23?sort=newest&amp;days=7" title="1967 questions tagged c# in the last 7 days">1967 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/php" class="post-tag" title="show questions tagged 'php'" rel="tag">php</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">1155944</span>
+                                </span>
+                                <div class="excerpt">a widely used, high-level, dynamic, object-oriented and interpreted scripting language primarily
+                                    designed for server-side web development.</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/php?sort=newest&amp;days=1" title="437 questions tagged php in the last 24 hours">437 kez bugün</a>,
+                                        <a href="/questions/tagged/php?sort=newest&amp;days=7" title="2486 questions tagged php in the last 7 days">2486 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/android" class="post-tag" title="show questions tagged 'android'" rel="tag">
+                                    <img src="//i.stack.imgur.com/tKsDb.png" height="16" width="18" alt="" class="sponsor-tag-img">android</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">1061672</span>
+                                </span>
+                                <div class="excerpt">Google's mobile operating system, used for programming or developing digital devices (Smartphones,
+                                    Tablets, Automobiles, TVs, Wear, Glass, IoT). For topics within Android, use Android-speci…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/android?sort=newest&amp;days=1" title="471 questions tagged android in the last 24 hours">471 kez bugün</a>,
+                                        <a href="/questions/tagged/android?sort=newest&amp;days=7" title="2767 questions tagged android in the last 7 days">2767 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/jquery" class="post-tag" title="show questions tagged 'jquery'" rel="tag">jquery</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">889337</span>
+                                </span>
+                                <div class="excerpt">a popular cross-browser JavaScript library that facilitates Document Object Model (DOM) traversal,
+                                    event handling, animations, and AJAX interactions by minimizing the discrepancies across
+                                    br…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/jquery?sort=newest&amp;days=1" title="234 questions tagged jquery in the last 24 hours">234 kez bugün</a>,
+                                        <a href="/questions/tagged/jquery?sort=newest&amp;days=7" title="1272 questions tagged jquery in the last 7 days">1272 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">874966</span>
+                                </span>
+                                <div class="excerpt">a dynamic and strongly typed programming language designed to emphasize usability. Two similar
+                                    but mostly incompatible versions of Python are in widespread use (2 and 3). If you have
+                                    a versi…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/python?sort=newest&amp;days=1" title="581 questions tagged python in the last 24 hours">581 kez bugün</a>,
+                                        <a href="/questions/tagged/python?sort=newest&amp;days=7" title="3445 questions tagged python in the last 7 days">3445 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/html" class="post-tag" title="show questions tagged 'html'" rel="tag">html</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">716349</span>
+                                </span>
+                                <div class="excerpt">the standard markup language used for structuring web pages and formatting content. HTML
+                                    describes the structure of a website semantically along with cues for pres…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/html?sort=newest&amp;days=1" title="317 questions tagged html in the last 24 hours">317 kez bugün</a>,
+                                        <a href="/questions/tagged/html?sort=newest&amp;days=7" title="1657 questions tagged html in the last 7 days">1657 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">549395</span>
+                                </span>
+                                <div class="excerpt">a general-purpose programming language. It was originally designed as an extension to C,
+                                    and keeps a similar syntax, but is now a completely different language. Use this tag
+                                    for questions about…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/c%2b%2b?sort=newest&amp;days=1" title="160 questions tagged c++ in the last 24 hours">160 kez bugün</a>,
+                                        <a href="/questions/tagged/c%2b%2b?sort=newest&amp;days=7" title="1064 questions tagged c++ in the last 7 days">1064 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/ios" class="post-tag" title="show questions tagged 'ios'" rel="tag">ios</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">545000</span>
+                                </span>
+                                <div class="excerpt">the mobile operating system running on the Apple iPhone, iPod touch, and iPad. Use this tag
+                                    [ios] for questions related to programming on the iOS platform. Use the related tags
+                                    [objective-c] an…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/ios?sort=newest&amp;days=1" title="166 questions tagged ios in the last 24 hours">166 kez bugün</a>,
+                                        <a href="/questions/tagged/ios?sort=newest&amp;days=7" title="1064 questions tagged ios in the last 7 days">1064 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/css" class="post-tag" title="show questions tagged 'css'" rel="tag">css</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">512992</span>
+                                </span>
+                                <div class="excerpt">a style sheet language used for describing the look and formatting of HTML (Hyper Text Markup
+                                    Language), XML (Extensible Markup Language) documents and SVG elements inc…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/css?sort=newest&amp;days=1" title="217 questions tagged css in the last 24 hours">217 kez bugün</a>,
+                                        <a href="/questions/tagged/css?sort=newest&amp;days=7" title="1155 questions tagged css in the last 7 days">1155 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/mysql" class="post-tag" title="" rel="tag">mysql</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">499912</span>
+                                </span>
+                                <div class="excerpt">a free, open source Relational Database Management System (RDBMS) that uses Structured Query
+                                    Language (SQL).</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/mysql?sort=newest&amp;days=1" title="164 questions tagged mysql in the last 24 hours">164 kez bugün</a>,
+                                        <a href="/questions/tagged/mysql?sort=newest&amp;days=7" title="962 questions tagged mysql in the last 7 days">962 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/sql" class="post-tag" title="show questions tagged 'sql'" rel="tag">sql</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">420450</span>
+                                </span>
+                                <div class="excerpt">a language for querying databases. Questions should include code examples, table structure,
+                                    sample data, and a tag for the DBMS implementation (e.g. MySQL, PostgreSQ…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/sql?sort=newest&amp;days=1" title="161 questions tagged sql in the last 24 hours">161 kez bugün</a>,
+                                        <a href="/questions/tagged/sql?sort=newest&amp;days=7" title="760 questions tagged sql in the last 7 days">760 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/asp.net" class="post-tag" title="show questions tagged 'asp.net'" rel="tag">asp.net</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">327864</span>
+                                </span>
+                                <div class="excerpt">a Microsoft web application development framework that allows programmers to build dynamic
+                                    web sites, web applications and web services. It is useful to use this tag in conjunction
+                                    with the…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/asp.net?sort=newest&amp;days=1" title="75 questions tagged asp.net in the last 24 hours">75 kez bugün</a>,
+                                        <a href="/questions/tagged/asp.net?sort=newest&amp;days=7" title="400 questions tagged asp.net in the last 7 days">400 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/ruby-on-rails" class="post-tag" title="show questions tagged 'ruby-on-rails'" rel="tag">ruby-on-rails</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">285769</span>
+                                </span>
+                                <div class="excerpt">an open source full-stack web application framework written in Ruby. It follows the popular
+                                    MVC framework model and is known for its "convention over configuration" approach to
+                                    applic…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/ruby-on-rails?sort=newest&amp;days=1" title="57 questions tagged ruby-on-rails in the last 24 hours">57 kez bugün</a>,
+                                        <a href="/questions/tagged/ruby-on-rails?sort=newest&amp;days=7" title="325 questions tagged ruby-on-rails in the last 7 days">325 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/objective-c" class="post-tag" title="show questions tagged 'objective-c'" rel="tag">objective-c</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">282043</span>
+                                </span>
+                                <div class="excerpt">should be used only on questions that are about Objective-C features or depend on code in
+                                    the language. The tags [cocoa] and [cocoa-touch] should be used to ask about Apple's
+                                    frameworks or cl…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/objective-c?sort=newest&amp;days=1" title="30 questions tagged objective-c in the last 24 hours">30 kez bugün</a>,
+                                        <a href="/questions/tagged/objective-c?sort=newest&amp;days=7" title="170 questions tagged objective-c in the last 7 days">170 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/c" class="post-tag" title="show questions tagged 'c'" rel="tag">c</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">268047</span>
+                                </span>
+                                <div class="excerpt">a general-purpose computer programming language used for operating systems, libraries, games
+                                    and other high performance work. This tag should be used with general questions concerning
+                                    the C langu…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/c?sort=newest&amp;days=1" title="83 questions tagged c in the last 24 hours">83 kez bugün</a>,
+                                        <a href="/questions/tagged/c?sort=newest&amp;days=7" title="498 questions tagged c in the last 7 days">498 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/.net" class="post-tag" title="show questions tagged '.net'" rel="tag">.net</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">262510</span>
+                                </span>
+                                <div class="excerpt">a software framework designed mainly for the Microsoft Windows operating system. It includes
+                                    an implementation of the Base Class Library, Common Language Runtime (commonly referr…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/.net?sort=newest&amp;days=1" title="49 questions tagged .net in the last 24 hours">49 kez bugün</a>,
+                                        <a href="/questions/tagged/.net?sort=newest&amp;days=7" title="278 questions tagged .net in the last 7 days">278 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/arrays" class="post-tag" title="show questions tagged 'arrays'" rel="tag">arrays</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">250390</span>
+                                </span>
+                                <div class="excerpt">an ordered data structure consisting of a collection of elements (values or variables), each
+                                    identified by one (single dimensional array or vector) or multiple indexes. When tagging
+                                    a ques…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/arrays?sort=newest&amp;days=1" title="111 questions tagged arrays in the last 24 hours">111 kez bugün</a>,
+                                        <a href="/questions/tagged/arrays?sort=newest&amp;days=7" title="627 questions tagged arrays in the last 7 days">627 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/angularjs" class="post-tag" title="show questions tagged 'angularjs'" rel="tag">angularjs</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">247202</span>
+                                </span>
+                                <div class="excerpt">Use for questions about AngularJS (1.x), the open-source JavaScript framework. Do NOT use
+                                    this tag for Angular 2 or later versions; instead, use the [angular] tag.</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/angularjs?sort=newest&amp;days=1" title="78 questions tagged angularjs in the last 24 hours">78 kez bugün</a>,
+                                        <a href="/questions/tagged/angularjs?sort=newest&amp;days=7" title="415 questions tagged angularjs in the last 7 days">415 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/json" class="post-tag" title="show questions tagged 'json'" rel="tag">json</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">221790</span>
+                                </span>
+                                <div class="excerpt">a textual data interchange format and language-independent. Use this tag when this text format
+                                    is involved. DO NOT USE THIS TAG FOR NATIVE JAVASCRIPT OBJECTS OR JA…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/json?sort=newest&amp;days=1" title="113 questions tagged json in the last 24 hours">113 kez bugün</a>,
+                                        <a href="/questions/tagged/json?sort=newest&amp;days=7" title="645 questions tagged json in the last 7 days">645 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/sql-server" class="post-tag" title="show questions tagged 'sql-server'" rel="tag">sql-server</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">221037</span>
+                                </span>
+                                <div class="excerpt">a relational database management system (RDBMS). Use this tag for all SQL Server editions
+                                    including Compact, Express, Azure, Fast-track, APS (formerly PDW) and Azure SQL DW. Do…
+                                </div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/sql-server?sort=newest&amp;days=1" title="70 questions tagged sql-server in the last 24 hours">70 kez bugün</a>,
+                                        <a href="/questions/tagged/sql-server?sort=newest&amp;days=7" title="437 questions tagged sql-server in the last 7 days">437 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/iphone" class="post-tag" title="show questions tagged 'iphone'" rel="tag">iphone</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">218704</span>
+                                </span>
+                                <div class="excerpt">unless you are addressing Apple's iPhone and/or iPod touch specifically. For questions not
+                                    dependent on hardware, use the tag [ios]. Another tag to consider is [cocoa-touch] (but
+                                    n…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/iphone?sort=newest&amp;days=1" title="14 questions tagged iphone in the last 24 hours">14 kez bugün</a>,
+                                        <a href="/questions/tagged/iphone?sort=newest&amp;days=7" title="86 questions tagged iphone in the last 7 days">86 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/r" class="post-tag" title="show questions tagged 'r'" rel="tag">r</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">217180</span>
+                                </span>
+                                <div class="excerpt">a free, open-source programming language and software environment for statistical computing,
+                                    bioinformatics, and visualization. Provide minimal reproducible example with your questions.
+                                    Use dput(…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/r?sort=newest&amp;days=1" title="148 questions tagged r in the last 24 hours">148 kez bugün</a>,
+                                        <a href="/questions/tagged/r?sort=newest&amp;days=7" title="753 questions tagged r in the last 7 days">753 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/node.js" class="post-tag" title="show questions tagged 'node.js'" rel="tag">node.js</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">206263</span>
+                                </span>
+                                <div class="excerpt">an event-based, non-blocking, asynchronous I/O framework that uses Google's V8 JavaScript
+                                    engine and libuv library. It is used for developing applications that make heavy use
+                                    of the ability…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/node.js?sort=newest&amp;days=1" title="157 questions tagged node.js in the last 24 hours">157 kez bugün</a>,
+                                        <a href="/questions/tagged/node.js?sort=newest&amp;days=7" title="970 questions tagged node.js in the last 7 days">970 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/ruby" class="post-tag" title="show questions tagged 'ruby'" rel="tag">ruby</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">190552</span>
+                                </span>
+                                <div class="excerpt">a multi-platform open-source, dynamic object-oriented interpreted language, created by Yukihiro
+                                    Matsumoto (Matz) in 1995. The [ruby] tag is for questions related to the Ruby language,
+                                    includin…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/ruby?sort=newest&amp;days=1" title="52 questions tagged ruby in the last 24 hours">52 kez bugün</a>,
+                                        <a href="/questions/tagged/ruby?sort=newest&amp;days=7" title="220 questions tagged ruby in the last 7 days">220 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/ajax" class="post-tag" title="show questions tagged 'ajax'" rel="tag">ajax</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">181247</span>
+                                </span>
+                                <div class="excerpt">a technique for creating seamless interactive websites via asynchronous data exchange between
+                                    client and server. AJAX facilitates communication with the serve…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/ajax?sort=newest&amp;days=1" title="61 questions tagged ajax in the last 24 hours">61 kez bugün</a>,
+                                        <a href="/questions/tagged/ajax?sort=newest&amp;days=7" title="302 questions tagged ajax in the last 7 days">302 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/regex" class="post-tag" title="show questions tagged 'regex'" rel="tag">regex</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">180529</span>
+                                </span>
+                                <div class="excerpt">Regular expressions provide a declarative language to match patterns within strings. They
+                                    are commonly used for string validation, parsing, and transformation. Since regular expressions
+                                    are not fully …</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/regex?sort=newest&amp;days=1" title="41 questions tagged regex in the last 24 hours">41 kez bugün</a>,
+                                        <a href="/questions/tagged/regex?sort=newest&amp;days=7" title="268 questions tagged regex in the last 7 days">268 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/swift" class="post-tag" title="show questions tagged 'swift'" rel="tag">swift</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">176081</span>
+                                </span>
+                                <div class="excerpt">a general-purpose, open-source programming language developed by Apple Inc. for their platforms
+                                    and Linux. Use the tag only for questions about language features, or requiring code
+                                    in Swift. …</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/swift?sort=newest&amp;days=1" title="144 questions tagged swift in the last 24 hours">144 kez bugün</a>,
+                                        <a href="/questions/tagged/swift?sort=newest&amp;days=7" title="826 questions tagged swift in the last 7 days">826 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/xml" class="post-tag" title="show questions tagged 'xml'" rel="tag">xml</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">167770</span>
+                                </span>
+                                <div class="excerpt">a flexible, structured document format that defines human- and machine-readable encoding
+                                    rules.
+                                </div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/xml?sort=newest&amp;days=1" title="42 questions tagged xml in the last 24 hours">42 kez bugün</a>,
+                                        <a href="/questions/tagged/xml?sort=newest&amp;days=7" title="241 questions tagged xml in the last 7 days">241 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/asp.net-mvc" class="post-tag" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">165628</span>
+                                </span>
+                                <div class="excerpt">an open source web application framework and tooling that implements a version of the model-view-controller
+                                    (MVC) pattern tailored towards web applications and built upon …
+                                </div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/asp.net-mvc?sort=newest&amp;days=1" title="43 questions tagged asp.net-mvc in the last 24 hours">43 kez bugün</a>,
+                                        <a href="/questions/tagged/asp.net-mvc?sort=newest&amp;days=7" title="255 questions tagged asp.net-mvc in the last 7 days">255 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/django" class="post-tag" title="show questions tagged 'django'" rel="tag">django</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">159822</span>
+                                </span>
+                                <div class="excerpt">an open source server-side web application framework, written in Python. It is designed to
+                                    reduce the effort required to create complex data-driven websites and web applications,
+                                    with a spec…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/django?sort=newest&amp;days=1" title="89 questions tagged django in the last 24 hours">89 kez bugün</a>,
+                                        <a href="/questions/tagged/django?sort=newest&amp;days=7" title="502 questions tagged django in the last 7 days">502 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/linux" class="post-tag" title="show questions tagged 'linux'" rel="tag">linux</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">158312</span>
+                                </span>
+                                <div class="excerpt">LINUX QUESTIONS MUST BE PROGRAMMING RELATED. Use this tag only if your question relates to
+                                    programming using Linux APIs or Linux-specific behavior. If you need Linux support you
+                                    can try https://unix.s…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/linux?sort=newest&amp;days=1" title="92 questions tagged linux in the last 24 hours">92 kez bugün</a>,
+                                        <a href="/questions/tagged/linux?sort=newest&amp;days=7" title="398 questions tagged linux in the last 7 days">398 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/database" class="post-tag" title="show questions tagged 'database'" rel="tag">database</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">138305</span>
+                                </span>
+                                <div class="excerpt">an organized collection of data. It is the collection of schemas, tables, queries, reports,
+                                    views, and other objects. The data are typically organized to model aspects of reality
+                                    in a wa…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/database?sort=newest&amp;days=1" title="46 questions tagged database in the last 24 hours">46 kez bugün</a>,
+                                        <a href="/questions/tagged/database?sort=newest&amp;days=7" title="299 questions tagged database in the last 7 days">299 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/wpf" class="post-tag" title="show questions tagged 'wpf'" rel="tag">wpf</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">137166</span>
+                                </span>
+                                <div class="excerpt">a subsystem for rendering user interfaces in Windows-based applications.</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/wpf?sort=newest&amp;days=1" title="33 questions tagged wpf in the last 24 hours">33 kez bugün</a>,
+                                        <a href="/questions/tagged/wpf?sort=newest&amp;days=7" title="197 questions tagged wpf in the last 7 days">197 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                            <td class="tag-cell">
+                                <br/>
+                                <a href="/questions/tagged/excel" class="post-tag" title="show questions tagged 'excel'" rel="tag">excel</a>
+                                <span class="item-multiplier">
+                                    <span class="item-multiplier-x">×</span>&nbsp;
+                                    <span class="item-multiplier-count">136544</span>
+                                </span>
+                                <div class="excerpt">Only for questions on programming against Excel objects or files, or complex formula development.
+                                    You may combine the Excel tag with VBA, VSTO, C#, VB.NET, PowerShell, OLE automation,
+                                    and other progra…</div>
+                                <div>
+                                    <div class="stats-row fl">
+                                        <a href="/questions/tagged/excel?sort=newest&amp;days=1" title="81 questions tagged excel in the last 24 hours">81 kez bugün</a>,
+                                        <a href="/questions/tagged/excel?sort=newest&amp;days=7" title="370 questions tagged excel in the last 7 days">370 kez bu hafta</a>
+                                    </div>
+                                    <div class="cbt"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="pager fr">
+
+
+
+
+
+                    <span class="page-numbers current">1</span>
+                    <a href="/tags?page=2&amp;tab=popular" title="go to page 2">
+                        <span class="page-numbers">2</span>
+                    </a>
+                    <a href="/tags?page=3&amp;tab=popular" title="go to page 3">
+                        <span class="page-numbers">3</span>
+                    </a>
+                    <a href="/tags?page=4&amp;tab=popular" title="go to page 4">
+                        <span class="page-numbers">4</span>
+                    </a>
+                    <a href="/tags?page=5&amp;tab=popular" title="go to page 5">
+                        <span class="page-numbers">5</span>
+                    </a>
+                    <span class="page-numbers dots">…</span>
+                    <a href="/tags?page=1497&amp;tab=popular" title="go to page 1497">
+                        <span class="page-numbers">1497</span>
+                    </a>
+                    <a href="/tags?page=2&amp;tab=popular" rel="next" title="go to page 2">
+                        <span class="page-numbers next"> ileri</span>
+                    </a>
+
+                </div>
+
+
+            </div>
+            <script src="app.js"></script>
+            <script type="text/javascript">
+
+            </script>
+            <script>
+                $(document).ready(function () {
+                    
+                    var request = null;
+                    function finished(txt) {
+                        if (request) { request.abort(); }
+                        request = $.ajax({
+                            type: "POST",
+                            url: "/filter/tags-for-index",
+                            data: { filter: txt, tab: 'Popular' },
+                            dataType: "html",
+                            success: function (result) {
+                                var domelement = $(result);
+                                $("#tags_list").html(domelement);
+
+                                if (txt == "") {
+                                    $(".pager").show();
+                                } else {
+                                    $(".pager").hide();
+                                }
+
+                            }
+                        });
+                    }
+                });
+            </script>
+        </div>
+
+
+    </div><div style="background-color: #f48024">
+            <footer class="container-fluid text-center" style="background-color:#f48024">
+          <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </a>
+          <p style="color: white">Manisa Celal Bayar Üniversitesi Yazılım Mühendisliği öğrencileri tarafından yapılmıştır.</p>
+        </footer>
+    </div><script>
+            $(document).ready(function(){
+              // Add smooth scrolling to all links in navbar + footer link
+              $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                  // Prevent default anchor click behavior
+                  event.preventDefault();
+            
+                  // Store hash
+                  var hash = this.hash;
+            
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                  $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                  }, 900, function(){
+               
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                  });
+                } // End if
+              });
+              
+              $(window).scroll(function() {
+                $(".slideanim").each(function(){
+                  var pos = $(this).offset().top;
+            
+                  var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                      $(this).addClass("slide");
+                    }
+                });
+              });
+            })
+            </script>
+
+</body>
+
+</html>
